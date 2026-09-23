@@ -12,10 +12,12 @@ import {
   Sparkles
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { useLanguage } from '../../context/LanguageContext';
 import { Link } from 'react-router-dom';
 
 export const ThreeColumnArchitecture = ({ onOpenSlideOver, onOpenVoiceModal }) => {
   const { isAdmin, isDistrictOfficer } = useAuth();
+  const { t } = useLanguage();
 
   return (
     <section className="space-y-6">
@@ -23,12 +25,12 @@ export const ThreeColumnArchitecture = ({ onOpenSlideOver, onOpenVoiceModal }) =
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-2 border-b border-slate-200/80">
         <div>
           <h2 className="text-2xl sm:text-3xl font-black text-[#2E1065] tracking-tight">
-            Smarter Monitoring. Transparent Funds.
+            {t('arch_main_heading', 'Smarter Monitoring. Transparent Funds.')}
           </h2>
         </div>
         <div className="text-right hidden sm:block">
-          <span className="text-sm font-semibold text-purple-800 italic block font-serif">Real projects.</span>
-          <span className="text-sm font-semibold text-purple-800 italic block font-serif">Real impact.</span>
+          <span className="text-sm font-semibold text-purple-800 italic block font-serif">{t('arch_tag_projects', 'Real projects.')}</span>
+          <span className="text-sm font-semibold text-purple-800 italic block font-serif">{t('arch_tag_impact', 'Real impact.')}</span>
         </div>
       </div>
 
@@ -36,7 +38,7 @@ export const ThreeColumnArchitecture = ({ onOpenSlideOver, onOpenVoiceModal }) =
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
         
         {/* ================================================================ */}
-        {/* COLUMN 1: Evidence & Fraud Checks                                */}
+        {/* COLUMN 1: {t('arch_col1_heading', 'Evidence & Fraud Checks')}                                */}
         {/* ================================================================ */}
         <div className="bg-white/95 rounded-none border border-slate-200 shadow-sm p-6 flex flex-col justify-between space-y-5 hover:shadow-md transition-shadow">
           <div className="space-y-4">
@@ -52,7 +54,7 @@ export const ThreeColumnArchitecture = ({ onOpenSlideOver, onOpenVoiceModal }) =
               </div>
             </div>
 
-            {/* Item 1: Duplicate Photo Detection with Image Thumbnail */}
+            {/* Item 1: {t('arch_col1_f1_title', 'Duplicate Photo Detection')} with Image Thumbnail */}
             <div className="p-3 bg-slate-50/70 hover:bg-slate-50 border border-slate-100 rounded-xl flex items-center gap-3.5 transition-colors">
               <div className="w-16 h-12 rounded-lg overflow-hidden shrink-0 border border-slate-200 bg-slate-200">
                 <img
@@ -70,12 +72,12 @@ export const ThreeColumnArchitecture = ({ onOpenSlideOver, onOpenVoiceModal }) =
                   Duplicate Photo Detection
                 </h4>
                 <p className="text-[11px] text-slate-500 leading-snug mt-0.5">
-                  Finds reused or edited images across projects.
+                  {t('arch_col1_f1_desc', 'Finds reused or edited images across projects.')}
                 </p>
               </div>
             </div>
 
-            {/* Item 2: Contractor & Cartel Monitor */}
+            {/* Item 2: {t('arch_col1_f2_title', 'Contractor & Cartel Monitor')} */}
             <div className="p-3 bg-slate-50/70 hover:bg-slate-50 border border-slate-100 rounded-xl flex items-center gap-3.5 transition-colors">
               <div className="w-12 h-12 rounded-xl bg-blue-50/80 text-blue-600 flex items-center justify-center shrink-0 border border-blue-100">
                 <FileSpreadsheet className="w-6 h-6 text-blue-500" />
@@ -85,12 +87,12 @@ export const ThreeColumnArchitecture = ({ onOpenSlideOver, onOpenVoiceModal }) =
                   Contractor & Cartel Monitor
                 </h4>
                 <p className="text-[11px] text-slate-500 leading-snug mt-0.5">
-                  Flags unusual patterns in bidding and contractors.
+                  {t('arch_col1_f2_desc', 'Flags unusual patterns in bidding and contractors.')}
                 </p>
               </div>
             </div>
 
-            {/* Item 3: Fair Pricing & Location Check */}
+            {/* Item 3: {t('arch_col1_f3_title', 'Fair Pricing & Location Check')} */}
             <div className="p-3 bg-slate-50/70 hover:bg-slate-50 border border-slate-100 rounded-xl flex items-center gap-3.5 transition-colors">
               <div className="w-12 h-12 rounded-xl bg-emerald-50/80 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-100">
                 <MapPin className="w-6 h-6 text-emerald-500" />
@@ -100,7 +102,7 @@ export const ThreeColumnArchitecture = ({ onOpenSlideOver, onOpenVoiceModal }) =
                   Fair Pricing & Location Check
                 </h4>
                 <p className="text-[11px] text-slate-500 leading-snug mt-0.5">
-                  Detects over/under pricing and wrong locations.
+                  {t('arch_col1_f3_desc', 'Detects over/under pricing and wrong locations.')}
                 </p>
               </div>
             </div>
@@ -130,7 +132,7 @@ export const ThreeColumnArchitecture = ({ onOpenSlideOver, onOpenVoiceModal }) =
         </div>
 
         {/* ================================================================ */}
-        {/* COLUMN 2: AI Risk Scoring Models                                 */}
+        {/* COLUMN 2: {t('arch_col2_heading', 'AI Risk Scoring Models')}                                 */}
         {/* ================================================================ */}
         <div className="bg-white/95 rounded-none border border-slate-200 shadow-sm p-6 flex flex-col justify-between space-y-5 hover:shadow-md transition-shadow">
           <div className="space-y-4">
@@ -166,14 +168,14 @@ export const ThreeColumnArchitecture = ({ onOpenSlideOver, onOpenVoiceModal }) =
               </p>
             </div>
 
-            {/* Item 3: Three Clear Risk Levels (High, Warning, Safe) */}
+            {/* Item 3: {t('arch_col2_f2_title', 'Three Clear Risk Levels')} (High, Warning, Safe) */}
             <div className="p-3.5 bg-slate-50/70 border border-slate-100 rounded-xl space-y-2">
               <div>
                 <h4 className="text-xs font-bold text-slate-900">
                   Three Clear Risk Levels
                 </h4>
                 <p className="text-[11px] text-slate-500 leading-snug">
-                  Quickly shows how serious each case is.
+                  {t('arch_col2_f2_desc', 'Quickly shows how serious each case is.')}
                 </p>
               </div>
               <div className="grid grid-cols-3 gap-2 text-center">
@@ -217,7 +219,7 @@ export const ThreeColumnArchitecture = ({ onOpenSlideOver, onOpenVoiceModal }) =
         </div>
 
         {/* ================================================================ */}
-        {/* COLUMN 3: Interactive Dashboards & Voice AI                      */}
+        {/* COLUMN 3: {t('arch_col3_heading', 'Interactive Dashboards & Voice AI')}                      */}
         {/* ================================================================ */}
         <div className="bg-white/95 rounded-none border border-slate-200 shadow-sm p-6 flex flex-col justify-between space-y-5 hover:shadow-md transition-shadow">
           <div className="space-y-4">
@@ -233,7 +235,7 @@ export const ThreeColumnArchitecture = ({ onOpenSlideOver, onOpenVoiceModal }) =
               </div>
             </div>
 
-            {/* Item 1: Live Geospatial Map */}
+            {/* Item 1: {t('arch_col3_f1_title', 'Live Geospatial Map')} */}
             <Link
               to="/risk-map"
               className="p-3 bg-slate-50/70 hover:bg-slate-50 border border-slate-100 rounded-xl flex items-center gap-3.5 transition-colors block"
@@ -246,12 +248,12 @@ export const ThreeColumnArchitecture = ({ onOpenSlideOver, onOpenVoiceModal }) =
                   Live Geospatial Map
                 </h4>
                 <p className="text-[11px] text-slate-500 leading-snug mt-0.5">
-                  See projects, progress and alerts on the map.
+                  {t('arch_col3_f1_desc', 'See projects, progress and alerts on the map.')}
                 </p>
               </div>
             </Link>
 
-            {/* Item 2: One-Click Dossier */}
+            {/* Item 2: {t('arch_col3_f2_title', 'One-Click Dossier')} */}
             <div
               onClick={() => onOpenSlideOver && onOpenSlideOver()}
               className="p-3 bg-slate-50/70 hover:bg-slate-50 border border-slate-100 rounded-xl flex items-center gap-3.5 transition-colors cursor-pointer"
@@ -264,12 +266,12 @@ export const ThreeColumnArchitecture = ({ onOpenSlideOver, onOpenVoiceModal }) =
                   One-Click Dossier
                 </h4>
                 <p className="text-[11px] text-slate-500 leading-snug mt-0.5">
-                  Full project view with photos, progress and timeline.
+                  {t('arch_col3_f2_desc', 'Full project view with photos, progress and timeline.')}
                 </p>
               </div>
             </div>
 
-            {/* Item 3: Voice Assistant */}
+            {/* Item 3: {t('arch_col3_f3_title', 'Voice Assistant')} */}
             <div
               onClick={() => onOpenVoiceModal && onOpenVoiceModal()}
               className="p-3 bg-slate-50/70 hover:bg-slate-50 border border-slate-100 rounded-xl flex items-center gap-3.5 transition-colors cursor-pointer"
@@ -282,7 +284,7 @@ export const ThreeColumnArchitecture = ({ onOpenSlideOver, onOpenVoiceModal }) =
                   Voice Assistant
                 </h4>
                 <p className="text-[11px] text-slate-500 leading-snug mt-0.5">
-                  Ask in simple language. Get instant answers.
+                  {t('arch_col3_f3_desc', 'Ask in simple language. Get instant answers.')}
                 </p>
               </div>
             </div>

@@ -349,7 +349,7 @@ export const Home = () => {
                   activeNav === 'home' ? 'bg-purple-300 scale-100' : 'bg-slate-400 scale-75'
                 }`}
               />
-              <span>Home</span>
+              <span>{t('home_nav_home', 'Home')}</span>
             </button>
 
             {/* 2. Methodology & Working Principle */}
@@ -374,7 +374,7 @@ export const Home = () => {
                   activeNav === 'methodology' ? 'bg-purple-300 scale-100' : 'bg-slate-400 scale-75'
                 }`}
               />
-              <span>Methodology & Working Principle</span>
+              <span>{t('home_nav_methodology', 'Methodology & Working Principle')}</span>
             </button>
 
             {/* 3. About the Scheme */}
@@ -399,7 +399,7 @@ export const Home = () => {
                   activeNav === 'about' ? 'bg-purple-300 scale-100' : 'bg-slate-400 scale-75'
                 }`}
               />
-              <span>About the Scheme</span>
+              <span>{t('home_nav_about', 'About the Scheme')}</span>
             </button>
 
             {/* 4. Contact */}
@@ -424,7 +424,7 @@ export const Home = () => {
                   activeNav === 'contact' ? 'bg-purple-300 scale-100' : 'bg-slate-400 scale-75'
                 }`}
               />
-              <span>Contact</span>
+              <span>{t('home_nav_contact', 'Contact')}</span>
             </button>
           </nav>
 
@@ -491,7 +491,7 @@ export const Home = () => {
                 to="/login"
                 className="px-4 py-2 text-xs font-bold rounded-lg bg-white/80 hover:bg-white text-slate-800 border border-purple-200/80 shadow-sm transition inline-flex items-center gap-1.5 cursor-pointer backdrop-blur-md hover:shadow"
               >
-                <span>Login</span>
+                <span>{t('landing_login', 'Login')}</span>
                 <ArrowRight className="w-3.5 h-3.5 text-purple-700" />
               </Link>
             )}
@@ -528,10 +528,10 @@ export const Home = () => {
                 className="text-xl sm:text-3xl lg:text-[2.85rem] font-archivo font-black tracking-normal leading-snug sm:leading-tight lg:leading-[1.18] text-[#2E1065]"
                 style={{ fontFamily: "'Archivo', sans-serif" }}
               >
-                Scheme Guard: From Local Priorities to <br className="hidden sm:inline" /> National Development
+                {t('home_hero_title', 'Scheme Guard: From Local Priorities to National Development')}
               </h1>
               <p className="text-xs sm:text-sm text-slate-700 font-semibold max-w-2xl mx-auto drop-shadow-xs">
-                Algorithmic vigilance, real-time PFMS treasury tracking, and image forensics protecting public development assets across all 543 Lok Sabha Constituencies.
+                {t('home_hero_sub', 'Algorithmic vigilance, real-time PFMS treasury tracking, and image forensics protecting public development assets across all 543 Lok Sabha Constituencies.')}
               </p>
             </motion.div>
 
@@ -547,7 +547,7 @@ export const Home = () => {
                 onClick={handleLaunchAdminDemo}
                 className="frutiger-gloss-btn-primary px-7 py-3 rounded-2xl text-xs sm:text-sm font-bold flex items-center gap-2.5 active:scale-95 cursor-pointer shadow-lg"
               >
-                <span>{isDistrictOfficer ? 'Launch District Command' : 'Launch MoSPI Central Command'}</span>
+                <span>{isDistrictOfficer ? t('btn_district_cmd', 'Launch District Command') : t('landing_btn_admin', 'Launch MoSPI Central Command')}</span>
                 <AeroplaneArrow className="w-4 h-4 text-white" />
               </button>
 
@@ -558,7 +558,7 @@ export const Home = () => {
                   className="frutiger-gloss-btn-glass px-7 py-3 rounded-2xl text-xs sm:text-sm font-bold flex items-center gap-2.5 active:scale-95 cursor-pointer shadow-md"
                 >
                   <AnimatedEye className="w-4 h-4 text-sky-700" />
-                  <span>Explore Public Portal</span>
+                  <span>{t('landing_btn_public', 'Explore Public Portal')}</span>
                 </button>
               )}
             </motion.div>
@@ -583,9 +583,9 @@ export const Home = () => {
                 <AnimatedFileText className="w-6 h-6 text-sky-700" />
               </div>
               <span className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition-colors">
-                Guidelines & Acts
+                {t('home_box_guidelines', 'Guidelines & Acts')}
               </span>
-              <span className="text-[11px] text-slate-600 font-medium mt-0.5">2023 Revised Protocol</span>
+              <span className="text-[11px] text-slate-600 font-medium mt-0.5">{t('home_box_guidelines_sub', '2023 Revised Protocol')}</span>
             </motion.a>
 
             {/* Box 2: Voice AI Assist - Always Visible */}
@@ -599,9 +599,9 @@ export const Home = () => {
                 <AnimatedVoice className="w-6 h-6 text-emerald-700" />
               </div>
               <span className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-emerald-700 transition-colors">
-                Voice AI Assist
+                {t('home_box_voice', 'Voice AI Assist')}
               </span>
-              <span className="text-[11px] text-slate-600 font-medium mt-0.5">8 Indic Languages</span>
+              <span className="text-[11px] text-slate-600 font-medium mt-0.5">{t('home_box_voice_sub', '8 Indic Languages')}</span>
             </motion.button>
 
             {/* Box 3 for Citizens: Citizen Request */}
@@ -616,9 +616,9 @@ export const Home = () => {
                   <AeroplaneSend className="w-6 h-6 text-amber-700" />
                 </div>
                 <span className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-amber-700 transition-colors">
-                  Citizen Request
+                  {t('home_box_citizen', 'Citizen Request')}
                 </span>
-                <span className="text-[11px] text-slate-600 font-medium mt-0.5">Local Area Proposal</span>
+                <span className="text-[11px] text-slate-600 font-medium mt-0.5">{t('home_box_citizen_sub', 'Local Area Proposal')}</span>
               </motion.button>
             )}
 
@@ -636,9 +636,9 @@ export const Home = () => {
                     <AnimatedAlertTriangle className="w-6 h-6 text-rose-600" />
                   </div>
                   <span className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-rose-700 transition-colors">
-                    AI Audit Dossier
+                    {t('home_box_audit', 'AI Audit Dossier')}
                   </span>
-                  <span className="text-[11px] text-slate-600 font-medium mt-0.5">Flagged NANDURBAR</span>
+                  <span className="text-[11px] text-slate-600 font-medium mt-0.5">{t('home_box_audit_sub', 'Flagged NANDURBAR')}</span>
                 </Link>
               </motion.div>
             )}
@@ -654,7 +654,7 @@ export const Home = () => {
           <div className="frutiger-gloss-card bg-white rounded-none p-3.5 flex items-center gap-3 overflow-hidden shadow-sm">
             <div className="px-3 py-1 bg-gradient-to-r from-purple-950 to-indigo-950 text-white text-[10px] font-bold uppercase tracking-wider rounded-xl font-mono shrink-0 flex items-center gap-1.5 border border-purple-400/40 shadow-sm">
               <Activity className="w-3.5 h-3.5 text-purple-300 animate-pulse" />
-              <span>Live Surveillance</span>
+              <span>{t('home_ticker_badge', 'Live Surveillance')}</span>
             </div>
             <div className="flex-1 overflow-hidden relative">
               <div className="animate-marquee-smooth text-xs text-slate-800 font-medium">
@@ -678,11 +678,11 @@ export const Home = () => {
               <div>
                 <div className="flex items-center gap-2">
                   <h2 className="text-base sm:text-lg font-black text-[#2E1065]">
-                    National Developmental Indicators & Fund Flow
+                    {t('home_kpi_heading', 'National Developmental Indicators & Fund Flow')}
                   </h2>
                 </div>
                 <p className="text-xs text-slate-600 font-medium mt-0.5">
-                  Live statistics of works recommended online by Hon'ble Members of Parliament under revised TSA fund procedure
+                  {t('home_kpi_sub', "Live statistics of works recommended online by Hon'ble Members of Parliament under revised TSA fund procedure")}
                 </p>
               </div>
 
@@ -697,7 +697,7 @@ export const Home = () => {
                       : 'text-slate-600 hover:text-slate-950'
                   }`}
                 >
-                  Statutory e-SAKSHI View
+                  {t('kpi_tab_statutory', 'Statutory e-SAKSHI View')}
                 </button>
                 <button
                   type="button"
@@ -709,7 +709,7 @@ export const Home = () => {
                   }`}
                 >
                   <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                  <span>AI Vigilance Layer</span>
+                  <span>{t('kpi_tab_vigilance', 'AI Vigilance Layer')}</span>
                 </button>
               </div>
             </div>
@@ -726,7 +726,7 @@ export const Home = () => {
                       : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
                   }`}
                 >
-                  Lok Sabha (543 MPs)
+                  {t('kpi_sabha_lok', 'Lok Sabha (543 MPs)')}
                 </button>
                 <button
                   type="button"
@@ -737,7 +737,7 @@ export const Home = () => {
                       : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
                   }`}
                 >
-                  Rajya Sabha (245 MPs)
+                  {t('kpi_sabha_rajya', 'Rajya Sabha (245 MPs)')}
                 </button>
               </div>
             )}
@@ -752,9 +752,9 @@ export const Home = () => {
                   <PentagonCard
                     index={0}
                     inView={true}
-                    title="Entitlement (FY)"
+                    title={t('kpi_entitlement', 'Entitlement (FY)')}
                     value="₹5.00 Cr"
-                    subtitle="Per MP / Year"
+                    subtitle={t('kpi_entitlement_sub', 'Per MP / Year')}
                     variant="purple"
                     borderColor="#7e22ce"
                     bgColor="bg-white"
@@ -762,9 +762,9 @@ export const Home = () => {
                   <PentagonCard
                     index={1}
                     inView={true}
-                    title="TSA Pooled Fund"
+                    title={t('kpi_tsa_fund', 'TSA Pooled Fund')}
                     value={`₹${nationalKpis.totalFundsCr || '8,333.67'} Cr`}
-                    subtitle="Active Allocations"
+                    subtitle={t('kpi_tsa_fund_sub', 'Active Allocations')}
                     variant="blue"
                     borderColor="#6b21a8"
                     bgColor="bg-white"
@@ -772,9 +772,9 @@ export const Home = () => {
                   <PentagonCard
                     index={2}
                     inView={true}
-                    title="Works Recommended"
+                    title={t('kpi_works_rec', 'Works Recommended')}
                     value={activeSabha === 'lok' ? '33,123' : '8,410'}
-                    subtitle="Digital Submissions"
+                    subtitle={t('kpi_works_rec_sub', 'Digital Submissions')}
                     variant="default"
                     borderColor="#94a3b8"
                     bgColor="bg-white"
@@ -782,9 +782,9 @@ export const Home = () => {
                   <PentagonCard
                     index={3}
                     inView={true}
-                    title="Works Sanctioned"
+                    title={t('kpi_works_sanc', 'Works Sanctioned')}
                     value={activeSabha === 'lok' ? '28,450' : '6,920'}
-                    subtitle="Feasibility Passed"
+                    subtitle={t('kpi_works_sanc_sub', 'Feasibility Passed')}
                     variant="purple"
                     borderColor="#7e22ce"
                     bgColor="bg-white"
@@ -792,9 +792,9 @@ export const Home = () => {
                   <PentagonCard
                     index={4}
                     inView={true}
-                    title="Works Completed"
+                    title={t('kpi_works_comp', 'Works Completed')}
                     value={activeSabha === 'lok' ? '21,200' : '5,140'}
-                    subtitle="Assets Built & Verified"
+                    subtitle={t('kpi_works_comp_sub', 'Assets Built & Verified')}
                     variant="success"
                     borderColor="#059669"
                     bgColor="bg-white"
@@ -802,9 +802,9 @@ export const Home = () => {
                   <PentagonCard
                     index={5}
                     inView={true}
-                    title="Total Expenditure"
+                    title={t('kpi_expenditure', 'Total Expenditure')}
                     value={activeSabha === 'lok' ? '₹46,210 Cr' : '₹9,840 Cr'}
-                    subtitle="PFMS Disbursals"
+                    subtitle={t('kpi_expenditure_sub', 'PFMS Disbursals')}
                     variant="warning"
                     borderColor="#d97706"
                     bgColor="bg-white"
@@ -815,9 +815,9 @@ export const Home = () => {
                   <PentagonCard
                     index={0}
                     inView={true}
-                    title="AI Monitored Works"
+                    title={t('kpi_ai_monitored_title', 'AI Monitored Works')}
                     value={String(nationalKpis.projectsMonitored || 8420)}
-                    subtitle="100% Geotagged MBs"
+                    subtitle={t('kpi_ai_monitored_desc', '100% Geotagged MBs')}
                     variant="blue"
                     borderColor="#0284c7"
                     bgColor="bg-sky-50/60"
@@ -825,9 +825,9 @@ export const Home = () => {
                   <PentagonCard
                     index={1}
                     inView={true}
-                    title="Anomalies Flagged"
+                    title={t('kpi_anomalies_title', 'Anomalies Flagged')}
                     value={String(nationalKpis.anomaliesDetected || 142)}
-                    subtitle="Continuous Watch"
+                    subtitle={t('kpi_anomalies_desc', 'Continuous Watch')}
                     variant="danger"
                     borderColor="#e11d48"
                     bgColor="bg-rose-50/60"
@@ -835,9 +835,9 @@ export const Home = () => {
                   <PentagonCard
                     index={2}
                     inView={true}
-                    title="High-Risk Queue"
+                    title={t('kpi_high_risk_title', 'High-Risk Queue')}
                     value={String(nationalKpis.highRiskProjects || 38)}
-                    subtitle="Composite > 70"
+                    subtitle={t('kpi_high_risk_desc', 'Composite > 70')}
                     variant="danger"
                     borderColor="#dc2626"
                     bgColor="bg-rose-50/60"
@@ -845,9 +845,9 @@ export const Home = () => {
                   <PentagonCard
                     index={3}
                     inView={true}
-                    title="Cartels Detected"
+                    title={t('kpi_cartels_title', 'Cartels Detected')}
                     value="14 Rings"
-                    subtitle="HHI Index > 2500"
+                    subtitle={t('kpi_cartels_desc', 'HHI Index > 2500')}
                     variant="warning"
                     borderColor="#d97706"
                     bgColor="bg-amber-50/60"
@@ -855,9 +855,9 @@ export const Home = () => {
                   <PentagonCard
                     index={4}
                     inView={true}
-                    title="Duplicate Intercept"
+                    title={t('kpi_dup_title', 'Duplicate Intercept')}
                     value="96.4%"
-                    subtitle="OpenCV 64-bit dHash"
+                    subtitle={t('kpi_dup_desc', 'OpenCV 64-bit dHash')}
                     variant="success"
                     borderColor="#059669"
                     bgColor="bg-emerald-50/60"
@@ -865,9 +865,9 @@ export const Home = () => {
                   <PentagonCard
                     index={5}
                     inView={true}
-                    title="Disbursals on Hold"
+                    title={t('kpi_hold_title', 'Disbursals on Hold')}
                     value="₹412.5 Cr"
-                    subtitle="Milestone Holds"
+                    subtitle={t('kpi_hold_desc', 'Milestone Holds')}
                     variant="purple"
                     borderColor="#9333ea"
                     bgColor="bg-purple-50/60"
@@ -883,7 +883,7 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="text-center max-w-4xl mx-auto">
             <TypewriterHeading
-              text="How It Works: Continuous Vigilance & Public Fund Safeguards"
+              text={t('home_how_it_works', 'How It Works: Continuous Vigilance & Public Fund Safeguards')}
               className="text-lg sm:text-2xl lg:text-[1.85rem] font-extrabold text-[#2E1065] tracking-tight leading-snug"
             />
           </div>
@@ -929,13 +929,13 @@ export const Home = () => {
             <div className="lg:col-span-8 space-y-5 text-xs sm:text-sm text-slate-600 leading-relaxed">
               <div className="flex items-center gap-2">
                 <span className="text-xs font-bold uppercase tracking-wider text-purple-700 font-mono">
-                  Statutory Overview
+                  {t('home_statutory_overview', 'Statutory Overview')}
                 </span>
                 <span className="text-slate-400">•</span>
-                <span className="text-xs font-semibold text-slate-500">Ministry of Statistics & Programme Implementation</span>
+                <span className="text-xs font-semibold text-slate-500">{t('brand_sub_short', 'Ministry of Statistics & Programme Implementation')}</span>
               </div>
 
-              <ScrollScalingHeading title="About Scheme Guard" />
+              <ScrollScalingHeading title={t('home_about_title', 'About Scheme Guard')} />
 
               <p>
                 <b>Scheme Guard (MPLADS Vigilance Framework)</b> is the AI-governed integrity and transparency layer for the Members of Parliament Local Area Development Scheme (MPLADS), a Central Sector Scheme fully funded by the Government of India, launched on 23 December 1993. The Scheme enables Members of Parliament (MPs) to recommend developmental works based on the locally felt needs of their constituencies, with a focus on creating durable community assets and improving essential public services such as health, sanitation, education, and drinking water infrastructure.
@@ -956,8 +956,8 @@ export const Home = () => {
               <div className="p-4 bg-white border border-purple-200 rounded-none flex items-center gap-3.5 shadow-sm">
                 <Award className="w-7 h-7 text-amber-600 shrink-0" />
                 <p className="text-xs text-slate-700">
-                  <strong>Viksit Bharat @ 2047 Alignment: </strong>
-                  The Scheme encourages MPs to prioritize future-ready, green, and sustainable infrastructure that supports grassroots social equity and self-reliance.
+                  <strong>{t('home_viksit_bharat', 'Viksit Bharat @ 2047 Alignment:')} </strong>
+                  {t('home_viksit_desc', 'The Scheme encourages MPs to prioritize future-ready, green, and sustainable infrastructure that supports grassroots social equity and self-reliance.')}
                 </p>
               </div>
             </div>
