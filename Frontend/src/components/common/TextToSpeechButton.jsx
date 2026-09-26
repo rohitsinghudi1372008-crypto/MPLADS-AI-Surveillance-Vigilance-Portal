@@ -49,22 +49,31 @@ export const TextToSpeechButton = ({ className = '', showLabel = true }) => {
 
     const utterance = new SpeechSynthesisUtterance(mainText);
     
-    // Choose appropriate voice/lang
-    const langCode = currentLanguage.startsWith('hi') ? 'hi-IN' : 'en-IN';
+    // Choose appropriate voice/lang dynamically supporting all 8 Indic languages
+    const langCode = currentLanguage || 'en-IN';
     utterance.lang = langCode;
-    utterance.rate = 1.0;
+    utterance.rate = 0.95;
     utterance.pitch = 1.0;
 
-    const voices = window.speechSynthesis.getVoices();
-    const matchedVoice = voices.find(v => v.lang === langCode || v.lang.includes(langCode.split('-')[0]));
+    const voices = window.speechSynthesis.getVoices() || [];
+    const baseCode = langCode.split('-')[0].toLowerCase();
+    const matchedVoice = voices.find(v => (v.lang || '').replace('_', '-').toLowerCase() === langCode.toLowerCase())
+      || voices.find(v => (v.lang || '').toLowerCase().startsWith(baseCode));
     if (matchedVoice) {
       utterance.voice = matchedVoice;
     }
 
     utterance.onstart = () => setIsSpeaking(true);
-    utterance.onend = () => setIsSpeaking(false);
-    utterance.onerror = () => setIsSpeaking(false);
+    utterance.onend = () => {
+      window.__ttsActiveUtterance = null;
+      setIsSpeaking(false);
+    };
+    utterance.onerror = () => {
+      window.__ttsActiveUtterance = null;
+      setIsSpeaking(false);
+    };
 
+    window.__ttsActiveUtterance = utterance;
     window.speechSynthesis.speak(utterance);
   };
 
