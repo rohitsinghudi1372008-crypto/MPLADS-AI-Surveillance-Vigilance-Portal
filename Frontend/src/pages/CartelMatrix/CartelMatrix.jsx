@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { PentagonCard } from '../../components/common/PentagonCard';
+import { useLanguage } from '../../context/LanguageContext';
 
 // Comprehensive Syndicate Master Data with rich institutional forensic evidence
 const SYNDICATE_NODES = {
@@ -192,6 +193,7 @@ const EDGES = [
 ];
 
 export const CartelMatrix = () => {
+  const { t } = useLanguage();
   const [selectedNodeId, setSelectedNodeId] = useState('V-01');
   const [activeFilter, setActiveFilter] = useState('all'); // 'all' | 'ownership' | 'bidding' | 'projects'
   const [hoveredNodeId, setHoveredNodeId] = useState(null);
@@ -225,13 +227,13 @@ export const CartelMatrix = () => {
 
   return (
     <PageLayout
-      title="Vendor Cartel & Monopoly Matrix"
-      subtitle="Graph-neural and ROC intelligence tracking cross-company directorships, collusive cover bidding, and monopolistic public works allocation."
-      breadcrumbs={['Dashboard', 'Cartel Matrix']}
+      title={t('cartel_matrix_title', 'Vendor Cartel & Monopoly Matrix')}
+      subtitle={t('cartel_matrix_sub', 'Graph-neural and ROC intelligence tracking cross-company directorships, collusive cover bidding, and monopolistic public works allocation.')}
+      breadcrumbs={[t('nav_exec_dashboard', 'Dashboard'), t('nav_cartel_matrix', 'Cartel Matrix')]}
       badge={
         <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-50 text-amber-900 border border-amber-300 shadow-xs flex items-center gap-1.5">
           <Scale className="w-3.5 h-3.5 text-amber-700" />
-          MONOPOLY SYNDICATE ALERT (HHI: 4,820)
+          {t('MONOPOLY SYNDICATE ALERT (HHI: 4,820)', 'MONOPOLY SYNDICATE ALERT (HHI: 4,820)')}
         </span>
       }
     >
@@ -239,27 +241,27 @@ export const CartelMatrix = () => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
         <PentagonCard
           index={0}
-          title="Monopolized Districts"
-          value="3 Districts"
-          subtitle="Varanasi, Jaunpur & Kamrup"
+          title={t('Monopolized Districts', 'Monopolized Districts')}
+          value={t('3 Districts', '3 Districts')}
+          subtitle={t('Varanasi, Jaunpur & Kamrup', 'Varanasi, Jaunpur & Kamrup')}
           icon={MapPin}
           variant="danger"
         />
 
         <PentagonCard
           index={1}
-          title="Syndicate Tender Outlay"
+          title={t('Syndicate Tender Outlay', 'Syndicate Tender Outlay')}
           value="₹8.40 Cr"
-          subtitle="17 Interlinked Public Works"
+          subtitle={t('17 Interlinked Public Works', '17 Interlinked Public Works')}
           icon={Building}
           variant="warning"
         />
 
         <PentagonCard
           index={2}
-          title="Shared Shadow Directors"
-          value="1 Syndicate Ring"
-          subtitle="R. K. Agarwal across 3 firms"
+          title={t('Shared Shadow Directors', 'Shared Shadow Directors')}
+          value={t('1 Syndicate Ring', '1 Syndicate Ring')}
+          subtitle={t('R. K. Agarwal across 3 firms', 'R. K. Agarwal across 3 firms')}
           icon={User}
           variant="purple"
         />
@@ -275,8 +277,8 @@ export const CartelMatrix = () => {
                 <Network className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-sm font-bold text-slate-900 block">Eastern UP Infrastructure Tender Syndicate Cluster</span>
-                <span className="text-[11px] text-slate-500 font-medium">Bipartite Projection: Common Director $\rightarrow$ Contractor Entities $\rightarrow$ Municipal Works</span>
+                <span className="text-sm font-bold text-slate-900 block">{t('cartel_syndicate_map', 'Eastern UP Infrastructure Tender Syndicate Cluster')}</span>
+                <span className="text-[11px] text-slate-500 font-medium">{t('cartel_interactive_topology', 'Bipartite Projection: Common Director ➔ Contractor Entities ➔ Municipal Works')}</span>
               </div>
             </div>
 
@@ -291,7 +293,7 @@ export const CartelMatrix = () => {
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
-                All Links
+                {t('cartel_all_links', 'All Links')}
               </button>
               <button
                 type="button"
@@ -302,7 +304,7 @@ export const CartelMatrix = () => {
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
-                ROC Ownership
+                {t('cartel_roc_ownership', 'ROC Ownership')}
               </button>
               <button
                 type="button"
@@ -313,7 +315,7 @@ export const CartelMatrix = () => {
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
-                Cover Bids
+                {t('cartel_cover_bids', 'Cover Bids')}
               </button>
               <button
                 type="button"
@@ -324,7 +326,7 @@ export const CartelMatrix = () => {
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
-                Tender Awards
+                {t('cartel_tender_awards', 'Tender Awards')}
               </button>
             </div>
           </div>
@@ -619,9 +621,9 @@ export const CartelMatrix = () => {
           >
             {/* Node Role & Registration Header */}
             <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200/80">
-              <span className="text-xs text-slate-500 font-medium">Syndicate Role:</span>
+              <span className="text-xs text-slate-500 font-medium">{t('Syndicate Role:', 'Syndicate Role:')}</span>
               <span className="text-xs font-bold uppercase font-mono text-purple-900 bg-purple-100/80 px-2 py-0.5 rounded border border-purple-200">
-                {selectedNode.badge || selectedNode.type}
+                {t(selectedNode.badge, selectedNode.badge || selectedNode.type)}
               </span>
             </div>
 
@@ -629,28 +631,28 @@ export const CartelMatrix = () => {
             <div className="flex items-center justify-between p-2.5 rounded-xl bg-rose-50 border border-rose-200/80">
               <div className="flex items-center gap-1.5 text-xs text-rose-900 font-bold">
                 <Scale className="w-4 h-4 text-rose-700" />
-                <span>Market Concentration:</span>
+                <span>{t('Market Concentration:', 'Market Concentration:')}</span>
               </div>
               <span className="text-xs font-black font-mono text-rose-800">
-                4,820 HHI (Severe Monopoly)
+                {t('4,820 HHI (Severe Monopoly)', '4,820 HHI (Severe Monopoly)')}
               </span>
             </div>
 
             {/* Risk / Collusion Level */}
             {selectedNode.risk && (
               <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200/80">
-                <span className="text-xs text-slate-600 font-medium">Collusion Risk Score:</span>
+                <span className="text-xs text-slate-600 font-medium">{t('Collusion Risk Score:', 'Collusion Risk Score:')}</span>
                 <span className="text-sm font-black font-mono text-rose-700 flex items-center gap-1">
                   <ShieldAlert className="w-4 h-4 text-rose-600 inline" />
-                  {selectedNode.risk}% Critical Risk
+                  {selectedNode.risk}% {t('cartel_critical_risk', 'Critical Risk')}
                 </span>
               </div>
             )}
 
             {/* Primary Details Text */}
             <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 text-xs text-slate-700 leading-relaxed">
-              <span className="font-bold text-slate-900 block mb-1">Intelligence Summary:</span>
-              {selectedNode.details}
+              <span className="font-bold text-slate-900 block mb-1">{t('Intelligence Summary:', 'Intelligence Summary:')}</span>
+              {t(selectedNode.details, selectedNode.details)}
             </div>
 
             {/* Forensic Evidence Checklist */}
@@ -658,13 +660,13 @@ export const CartelMatrix = () => {
               <div className="space-y-2">
                 <span className="text-[11px] font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1">
                   <Fingerprint className="w-3.5 h-3.5 text-rose-600" />
-                  <span>Key Audit Evidence:</span>
+                  <span>{t('cartel_forensic_evidence', 'Key Audit Evidence:')}</span>
                 </span>
                 <div className="space-y-1.5">
                   {selectedNode.forensicEvidence.map((ev, i) => (
                     <div key={i} className="p-2 rounded-lg bg-rose-50/60 border border-rose-100 text-[11px] text-slate-800 flex items-start gap-1.5 leading-snug">
                       <AlertTriangle className="w-3.5 h-3.5 text-rose-600 shrink-0 mt-0.5" />
-                      <span>{ev}</span>
+                      <span>{t(ev, ev)}</span>
                     </div>
                   ))}
                 </div>
@@ -676,12 +678,12 @@ export const CartelMatrix = () => {
               <div className="space-y-1.5">
                 <span className="text-[11px] font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1">
                   <MapPin className="w-3.5 h-3.5 text-slate-600" />
-                  <span>Active Districts:</span>
+                  <span>{t('Active Districts:', 'Active Districts:')}</span>
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {selectedNode.districts.map((d, i) => (
                     <span key={i} className="px-2.5 py-0.5 rounded-md text-xs bg-slate-100 text-slate-800 border border-slate-200 font-medium">
-                      {d}
+                      {t(d, d)}
                     </span>
                   ))}
                 </div>
@@ -693,14 +695,14 @@ export const CartelMatrix = () => {
               <div className="space-y-1.5">
                 <span className="text-[11px] font-bold text-pink-700 uppercase tracking-wider flex items-center gap-1">
                   <Share2 className="w-3.5 h-3.5 text-pink-600" />
-                  <span>Interlinked Sister Companies:</span>
+                  <span>{t('cartel_director_interlocking', 'Interlinked Sister Companies:')}</span>
                 </span>
                 <div className="space-y-1">
                   {selectedNode.connectedVendors.map((v, i) => (
                     <div key={i} className="p-2 rounded-lg bg-pink-50/60 text-xs text-pink-950 border border-pink-200 flex items-center justify-between">
                       <span className="font-semibold">{v}</span>
                       <span className="text-[10px] text-pink-700 font-mono font-bold bg-pink-100 px-1.5 py-0.5 rounded border border-pink-300">
-                        Common ROC
+                        {t('Common ROC', 'Common ROC')}
                       </span>
                     </div>
                   ))}
@@ -718,7 +720,7 @@ export const CartelMatrix = () => {
                 icon={ArrowRight}
                 iconPosition="right"
               >
-                Investigate Flagged Tender (MPLAD-00124)
+                {t('Investigate Flagged Tender (MPLAD-00124)', 'Investigate Flagged Tender (MPLAD-00124)')}
               </Button>
             ) : selectedNode.id === 'DIR-01' ? (
               <Button
@@ -729,7 +731,7 @@ export const CartelMatrix = () => {
                 icon={Eye}
                 iconPosition="right"
               >
-                Inspect Primary Operating Firm (Apex Infra)
+                {t('Inspect Primary Operating Firm (Apex Infra)', 'Inspect Primary Operating Firm (Apex Infra)')}
               </Button>
             ) : null}
           </Card>
@@ -740,10 +742,10 @@ export const CartelMatrix = () => {
               <div className="p-1 rounded-lg bg-blue-50 text-blue-700 border border-blue-100">
                 <Info className="w-3.5 h-3.5" />
               </div>
-              <span>Why is this flagged by MoSPI AI?</span>
+              <span>{t('Why is this flagged by MoSPI AI?', 'Why is this flagged by MoSPI AI?')}</span>
             </span>
             <p className="text-slate-600 leading-relaxed pl-7">
-              Section 3(3) of the Competition Act, 2002 prohibits bid rigging and cartelization. When common directors control competing bidders who submit synthetic higher bids, government procurement funds are disbursed at inflated rates without authentic market discovery.
+              {t('Competition Act Section 3 warning', 'Section 3(3) of the Competition Act, 2002 prohibits bid rigging and cartelization. When common directors control competing bidders who submit synthetic higher bids, government procurement funds are disbursed at inflated rates without authentic market discovery.')}
             </p>
           </div>
         </div>

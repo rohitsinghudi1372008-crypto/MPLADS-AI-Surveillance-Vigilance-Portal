@@ -433,11 +433,11 @@ export const Home = () => {
                   <div className="leading-tight">
                     <div className="flex items-center gap-2">
                       <span className={`font-black text-base sm:text-lg tracking-tight ${isScrolled ? 'text-slate-900' : 'text-white'}`}>
-                        Scheme Guard
+                        {t('brand_title', 'Scheme Guard')}
                       </span>
                     </div>
                     <p className={`text-[10px] font-medium tracking-wide ${isScrolled ? 'text-slate-500' : 'text-purple-200/80'}`}>
-                      MoSPI • Govt. of India
+                      {t('brand_sub', 'MoSPI • Govt. of India')}
                     </p>
                   </div>
                 </div>
@@ -448,7 +448,7 @@ export const Home = () => {
                 {[
                   {
                     id: 'home',
-                    label: 'Home',
+                    label: t('home_nav_home', 'Home'),
                     action: () => {
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                       setActiveNav('home');
@@ -456,17 +456,17 @@ export const Home = () => {
                   },
                   {
                     id: 'methodology',
-                    label: 'Methodology',
+                    label: t('home_nav_methodology', 'Methodology'),
                     action: () => scrollToSection('methodology', 'methodology')
                   },
                   {
                     id: 'about',
-                    label: 'About',
+                    label: t('home_nav_about', 'About'),
                     action: () => scrollToSection('aboutus', 'about')
                   },
                   {
                     id: 'contact',
-                    label: 'Contact',
+                    label: t('home_nav_contact', 'Contact'),
                     action: () => scrollToSection('contact', 'contact')
                   }
                 ].map((item) => {
@@ -623,12 +623,12 @@ export const Home = () => {
             className="text-2xl sm:text-4xl lg:text-[3.25rem] font-archivo font-black tracking-normal leading-snug sm:leading-tight lg:leading-[1.18] text-white drop-shadow-md"
             style={{ fontFamily: "'Archivo', sans-serif" }}
           >
-            Scheme Guard: From Local Priorities to <br className="hidden sm:inline" /> National Development
+            {t('home_hero_title', 'Scheme Guard: From Local Priorities to National Development')}
           </h1>
 
           {/* Little Description right below it */}
           <p className="text-xs sm:text-base text-purple-100/90 font-medium max-w-2xl mx-auto mt-4 drop-shadow-xs leading-relaxed">
-            Algorithmic vigilance, real-time PFMS treasury tracking, and image forensics protecting public development assets across all 543 Lok Sabha Constituencies.
+            {t('home_hero_sub', 'Algorithmic vigilance, real-time PFMS treasury tracking, and image forensics protecting public development assets across all 543 Lok Sabha Constituencies.')}
           </p>
 
           {/* Role-Aware Command Button right below description */}
@@ -640,10 +640,10 @@ export const Home = () => {
             >
               <span>
                 {isDistrictOfficer
-                  ? 'Launch District Command'
+                  ? t('btn_district_cmd', 'Launch District Command')
                   : isAdmin
-                  ? 'Launch MoSPI Central Command'
-                  : 'Explore Public Portal'}
+                  ? t('landing_btn_admin', 'Launch MoSPI Central Command')
+                  : t('landing_btn_public', 'Explore Public Portal')}
               </span>
               <ArrowRight className="w-4 h-4 text-[#2E1065]" />
             </button>
@@ -660,14 +660,14 @@ export const Home = () => {
                   if (elem) elem.scrollIntoView({ behavior: 'smooth' });
                 }}
                 className="group rounded-full bg-white shadow-lg border border-purple-200/80 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 w-14 h-14 hover:w-36 hover:h-36 hover:shadow-2xl hover:border-purple-300 p-2 z-10 hover:z-30 text-center"
-                title="Guidelines & Acts"
+                title={t('home_guidelines_title', 'Guidelines & Acts')}
               >
                 <AnimatedFileText className="w-6 h-6 text-[#2E1065] shrink-0 transition-transform group-hover:scale-110 group-hover:mb-1" />
                 <span className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-16 transition-all duration-300 font-bold text-xs text-slate-900 leading-tight px-1 line-clamp-2">
-                  Guidelines & Acts
+                  {t('home_guidelines_title', 'Guidelines & Acts')}
                 </span>
                 <span className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-6 transition-all duration-300 text-[10px] text-purple-700 font-semibold">
-                  2023 Protocol
+                  {t('home_guidelines_sub', '2023 Protocol')}
                 </span>
               </button>
             </div>
@@ -678,14 +678,14 @@ export const Home = () => {
                 type="button"
                 onClick={() => setIsVoiceModalOpen(true)}
                 className="group rounded-full bg-white shadow-lg border border-purple-200/80 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 w-14 h-14 hover:w-36 hover:h-36 hover:shadow-2xl hover:border-purple-300 p-2 z-10 hover:z-30 text-center"
-                title="Voice AI Assistant"
+                title={t('home_voice_title', 'Voice AI Assistant')}
               >
                 <AnimatedVoice className="w-6 h-6 text-[#2E1065] shrink-0 transition-transform group-hover:scale-110 group-hover:mb-1" />
                 <span className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-16 transition-all duration-300 font-bold text-xs text-slate-900 leading-tight px-1 line-clamp-2">
-                  Voice AI Assistant
+                  {t('home_voice_title', 'Voice AI Assistant')}
                 </span>
                 <span className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-6 transition-all duration-300 text-[10px] text-purple-700 font-semibold">
-                  8 Indic Languages
+                  {t('home_voice_sub', '8 Indic Languages')}
                 </span>
               </button>
             </div>
@@ -696,14 +696,14 @@ export const Home = () => {
                 <Link
                   to="/project/MPLAD-2026-00124"
                   className="group rounded-full bg-white shadow-lg border border-purple-200/80 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 w-14 h-14 hover:w-36 hover:h-36 hover:shadow-2xl hover:border-purple-300 p-2 z-10 hover:z-30 text-center"
-                  title="AI Audit Dossier"
+                  title={t('home_audit_title', 'AI Audit Dossier')}
                 >
                   <AnimatedAlertTriangle className="w-6 h-6 text-[#2E1065] shrink-0 transition-transform group-hover:scale-110 group-hover:mb-1" />
                   <span className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-16 transition-all duration-300 font-bold text-xs text-slate-900 leading-tight px-1 line-clamp-2">
-                    AI Audit Dossier
+                    {t('home_audit_title', 'AI Audit Dossier')}
                   </span>
                   <span className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-6 transition-all duration-300 text-[10px] text-purple-700 font-semibold">
-                    Flagged Works
+                    {t('home_audit_sub', 'Flagged Works')}
                   </span>
                 </Link>
               ) : (
@@ -711,14 +711,14 @@ export const Home = () => {
                   type="button"
                   onClick={() => setIsCitizenModalOpen(true)}
                   className="group rounded-full bg-white shadow-lg border border-purple-200/80 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 w-14 h-14 hover:w-36 hover:h-36 hover:shadow-2xl hover:border-purple-300 p-2 z-10 hover:z-30 text-center"
-                  title="Citizen Request"
+                  title={t('home_citizen_title', 'Citizen Request')}
                 >
                   <AeroplaneSend className="w-6 h-6 text-[#2E1065] shrink-0 transition-transform group-hover:scale-110 group-hover:mb-1" />
                   <span className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-16 transition-all duration-300 font-bold text-xs text-slate-900 leading-tight px-1 line-clamp-2">
-                    Citizen Request
+                    {t('home_citizen_title', 'Citizen Request')}
                   </span>
                   <span className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-6 transition-all duration-300 text-[10px] text-purple-700 font-semibold">
-                    Area Proposal
+                    {t('home_citizen_sub', 'Area Proposal')}
                   </span>
                 </button>
               )}
@@ -743,15 +743,15 @@ export const Home = () => {
 
             <div className="relative z-10 px-3.5 py-1.5 bg-gradient-to-r from-purple-950 to-indigo-950 text-white text-[10px] font-bold uppercase tracking-wider rounded-lg font-mono shrink-0 flex items-center gap-1.5 border border-purple-400/40 shadow-sm">
               <Activity className="w-3.5 h-3.5 text-purple-300 animate-pulse" />
-              <span>Live Surveillance</span>
+              <span>{t('home_ticker_badge', 'Live Surveillance')}</span>
             </div>
             <div className="relative z-10 flex-1 overflow-hidden">
               <div className="animate-marquee-smooth text-xs text-slate-800 font-medium">
                 <span className="pr-12">
-                  🔔 <strong className="text-slate-900 font-bold">MoSPI e-SAKSHI 2.0 Alert:</strong> Surveillance active across 543 Lok Sabha Constituencies • ₹83,336.67 Cr funds continuously monitored • Project MPLAD-2026-00124 (Nandurbar) flagged with 87% composite risk due to duplicate image detection • TSA/Hybrid ‘just-in-time’ fund disbursal protocol integrated with PFMS, RBI and SBI.
+                  🔔 <strong className="text-slate-900 font-bold">{t('home_ticker_strong', 'MoSPI e-SAKSHI 2.0 Alert:')}</strong> {t('home_ticker_desc', 'Surveillance active across 543 Lok Sabha Constituencies • ₹83,336.67 Cr funds continuously monitored • Project MPLAD-2026-00124 (Nandurbar) flagged with 87% composite risk due to duplicate image detection • TSA/Hybrid ‘just-in-time’ fund disbursal protocol integrated with PFMS, RBI and SBI.')}
                 </span>
                 <span className="pr-12">
-                  🔔 <strong className="text-slate-900 font-bold">MoSPI e-SAKSHI 2.0 Alert:</strong> Surveillance active across 543 Lok Sabha Constituencies • ₹83,336.67 Cr funds continuously monitored • Project MPLAD-2026-00124 (Nandurbar) flagged with 87% composite risk due to duplicate image detection • TSA/Hybrid ‘just-in-time’ fund disbursal protocol integrated with PFMS, RBI and SBI.
+                  🔔 <strong className="text-slate-900 font-bold">{t('home_ticker_strong', 'MoSPI e-SAKSHI 2.0 Alert:')}</strong> {t('home_ticker_desc', 'Surveillance active across 543 Lok Sabha Constituencies • ₹83,336.67 Cr funds continuously monitored • Project MPLAD-2026-00124 (Nandurbar) flagged with 87% composite risk due to duplicate image detection • TSA/Hybrid ‘just-in-time’ fund disbursal protocol integrated with PFMS, RBI and SBI.')}
                 </span>
               </div>
             </div>
@@ -776,11 +776,11 @@ export const Home = () => {
                 <div>
                   <div className="flex items-center gap-2">
                     <h2 className="text-sm sm:text-base font-black text-[#2E1065]">
-                      National Developmental Indicators & Fund Flow
+                      {t('home_kpi_heading', 'National Developmental Indicators & Fund Flow')}
                     </h2>
                   </div>
                   <p className="text-[10.5px] text-slate-500 font-medium mt-0.5">
-                    Live statistics of works recommended online by Hon'ble MPs under revised TSA fund procedure
+                    {t('home_kpi_sub', "Live statistics of works recommended online by Hon'ble MPs under revised TSA fund procedure")}
                   </p>
                 </div>
 
@@ -795,7 +795,7 @@ export const Home = () => {
                         : 'text-slate-600 hover:text-slate-950'
                     }`}
                   >
-                    Statutory View
+                    {t('home_statutory_view', 'Statutory View')}
                   </button>
                   <button
                     type="button"
@@ -807,7 +807,7 @@ export const Home = () => {
                     }`}
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                    <span>AI Vigilance</span>
+                    <span>{t('home_ai_vigilance', 'AI Vigilance')}</span>
                   </button>
                 </div>
               </div>
